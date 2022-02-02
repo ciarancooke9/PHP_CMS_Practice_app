@@ -32,12 +32,12 @@ include "includes/header.php";
                         include "includes/add_post.php";
                         break;
 
-                        case '100';
-                        echo "nice 100";
+                        case 'edit_post';
+                        include "includes/edit_post.php";
                         break;
 
                         case '40';
-                        echo "nice 40";
+                        include "";
                         break;
 
                         default:
