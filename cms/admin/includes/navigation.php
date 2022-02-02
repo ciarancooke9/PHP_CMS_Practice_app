@@ -39,7 +39,7 @@
                         <a href="post.php">View all posts</a>
                     </li>
                     <li>
-                        <a href="includes/add_posts.php">Add posts</a>
+                        <a href="post.php?source=add_post">Add posts</a>
                     </li>
                 </ul>
             </li>
