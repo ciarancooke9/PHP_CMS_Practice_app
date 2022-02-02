@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['create_post'])){
+    global $connection;
     $author = $_POST['author'];
     $post_title = $_POST['post_title'];
     $post_category_id = $_POST['post_category_id'];
@@ -14,6 +15,15 @@ if (isset($_POST['create_post'])){
     $comment_count = 5;
 
     move_uploaded_file($post_image_temp, "../images/$post_image");
+
+    $query = "INSERT INTO posts(author, post_title, post_category_id, post_tags, post_status, post_image, post_content, post_date, comment_count) ";
+    $query.= "VALUES('$author','$post_title','$post_category_id','$post_tags','$post_status','$post_image','$post_content',now(),'$comment_count')";
+
+    $add_post_query = mysqli_query($connection, $query);
+
+    if(!$add_post_query) {
+        die('Query Failed' . mysqli_error($connection));
+    }
 }
 ?>
 
